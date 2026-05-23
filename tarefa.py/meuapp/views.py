@@ -36,4 +36,5 @@ def usuarios(request):
             'cidade' : 'Parnamirim',
         }
     ]
+
     return render(request,'usuarios.html', {'usuarios': lista_usuarios})
