@@ -10,4 +10,4 @@ def index(request):
         'hoje': date.today()
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'tarefa/index.html', context)
