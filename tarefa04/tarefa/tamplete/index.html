@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+</head>
+
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td, th{
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        .atrasadas{
+            background-color: #ffb3ff;
+        }
+    </style>
+
+<body>
+    <h1> Lista de Tarefas </h1>
+
+    <table>
+        <tr>
+            <th> Nome </th>
+            <th> Status </th>
+            <th> Prazo </th>
+        </tr>
+
+        {% for tarefa in tarefas %}
+
+        <tr {% if tarefa.prazo < hoje and hot tarefa.status}class="atrasadas" {% endif %}>
+            <td> {{ tarefa.nome }}</td>
+
+    <td>
+        {% if tarefa.status %}
+            concluida
+        {% else %}
+            pendente
+        {% endif %}
+    </td>
+
+    <td>{{tarefa.prazo}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+</body>
+</html>
